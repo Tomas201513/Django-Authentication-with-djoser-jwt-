@@ -143,14 +143,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #######################################################################################################################################################################################################
 
 
-AUTH_USER_MODEL = 'account.UserAccount'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'abrhambelete.haile@gmail.com'
-EMAIL_HOST_PASSWORD = 'sindwyztlgutvplk'
-EMAIL_USE_TLS = True
+AUTH_USER_MODEL = 'acounts.UserAccount'
+
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS','True')
+
+
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
@@ -167,10 +170,10 @@ DJOSER = {
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
     'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google', 'http://localhost:8000/facebook'],
     'SERIALIZERS': {
-        'user_create': 'account.serializers.UserCreateSerializer',
-        'user': 'account.serializers.UserCreateSerializer',
-        'current_user': 'account.serializers.UserCreateSerializer',
-        'user_delete': 'account.serializers.UserDeleteSerializer',
+        'user_create': 'acounts.serializers.UserCreateSerializer',
+        'user': 'acounts.serializers.UserCreateSerializer',
+        'current_user': 'acounts.serializers.UserCreateSerializer',
+        'user_delete': 'acounts.serializers.UserDeleteSerializer',
     }
 }
 
