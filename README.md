@@ -6,4 +6,4 @@ Django-Authentication with djoser and jwt
 
 
 
-[![forthebadge made-with-Django](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![forthebadge made-with-Python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
